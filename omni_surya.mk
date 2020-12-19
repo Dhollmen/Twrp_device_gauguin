@@ -18,6 +18,7 @@
 PRODUCT_RELEASE_NAME := surya
 DEVICE_PATH := device/xiaomi/surya
 
+$(call inherit-product, device/xiaomi/surya/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 # Inherit from our custom product configuration
