@@ -17,7 +17,7 @@
 #
 # 	Please maintain this if you use this script or any part of it
 #
-FDEVICE="surya"
+FDEVICE="gauguin"
 
 fox_get_target_device() {
 local chkdev=$(echo "$BASH_SOURCE" | grep $FDEVICE)
@@ -38,8 +38,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export LC_ALL="C"
  	export ALLOW_MISSING_DEPENDENCIES=true
 	export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
-	export TARGET_DEVICE_ALT="karna"
-	export OF_TARGET_DEVICES="surya,karna"
+	export TARGET_DEVICE_ALT="gauguininpro,gauguinpro"
+	export OF_TARGET_DEVICES="gauguin,gauguininpro,gauguinpro"
 	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
 	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
         export OF_QUICK_BACKUP_LIST="/boot;/data;"

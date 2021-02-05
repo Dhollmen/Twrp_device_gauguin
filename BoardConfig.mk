@@ -33,15 +33,15 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
 # Bootloader
-PRODUCT_PLATFORM := sm6150
-TARGET_BOOTLOADER_BOARD_NAME := sm6150
+PRODUCT_PLATFORM := lagoon
+TARGET_BOOTLOADER_BOARD_NAME := lagoon
 TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
 # Platform
-TARGET_BOARD_PLATFORM := sm6150
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno618
-QCOM_BOARD_PLATFORMS += sm6150
+TARGET_BOARD_PLATFORM := lagoon
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno619
+QCOM_BOARD_PLATFORMS += lagoon
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3 swiotlb=2048 loop.max_part=7 cgroup.memory=nokmem,nosocket
@@ -75,7 +75,7 @@ BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 #TARGET_USE_SDCLANG := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := surya,karna
+TARGET_OTA_ASSERT_DEVICE := gauguin
 
 # Avb
 BOARD_AVB_ENABLE := true

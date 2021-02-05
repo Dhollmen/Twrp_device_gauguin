@@ -1,6 +1,6 @@
-ro.display.series=Poco X3
-ro.product.board=sm6150
-ro.board.platform=sm6150
+ro.display.series=Mi 10T Lite
+ro.product.board=lagoon
+ro.board.platform=lagoon
 sys.usb.controller=a600000.dwc3
 sys.usb.rndis.func.name=rndis_bam
 sys.usb.rmnet.func.name=rmnet_bam
