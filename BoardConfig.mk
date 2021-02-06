@@ -75,7 +75,7 @@ BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 #TARGET_USE_SDCLANG := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := gauguin
+TARGET_OTA_ASSERT_DEVICE := gauguin,gauguininpro,gauguinpro
 
 # Avb
 BOARD_AVB_ENABLE := true
