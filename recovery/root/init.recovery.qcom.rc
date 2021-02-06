@@ -26,6 +26,8 @@
 #
 
 on fs
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/1-005a/f0_save
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/1-005a/osc_save
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     chmod 0660 /dev/qseecom
@@ -38,6 +40,7 @@ on early-fs
     start vold
 
 on init
+    start vibrator-service
     start hwservicemanager
     setprop crypto.ready 1
     chmod 0777 /init.recovery.qcom.sh
@@ -83,6 +86,12 @@ service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service-qti
     seclabel u:r:recovery:s0
 
 service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service-qti
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service vibrator-service /sbin/vendor.qti.hardware.vibrator@1.2-service
     user root
     group root
     disabled
