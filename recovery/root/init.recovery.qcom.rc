@@ -43,8 +43,6 @@ on init
     start vibrator-service
     start hwservicemanager
     setprop crypto.ready 1
-    chmod 0777 /init.recovery.qcom.sh
-    start init-recovery-qcom-sh
 
 service sbinqseecomd /sbin/qseecomd
     user root
@@ -97,14 +95,7 @@ service vibrator-service /sbin/vendor.qti.hardware.vibrator@1.2-service
     disabled
     seclabel u:r:recovery:s0
 
-service init-recovery-qcom-sh /init.recovery.qcom.sh
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
-
- service make-dir /system/bin/make-dir.sh
+service make-dir /system/bin/make-dir.sh
     user root
     group root
     disabled
