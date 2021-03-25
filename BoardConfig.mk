@@ -1,6 +1,4 @@
-#
 # Copyright (C) 2019 The TwrpBuilder Open-Source Project
-#
 # Copyright (C) 2020-2021 OrangeFox Recovery Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +12,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
 # Architecture
 TARGET_ARCH := arm64
@@ -71,9 +68,6 @@ BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
-# QCOM
-#TARGET_USE_SDCLANG := true
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := gauguin,gauguininpro,gauguinpro
 
@@ -82,16 +76,16 @@ BOARD_AVB_ENABLE := true
 BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 
 # Partitions
-# BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 134217728
 
 # Dynamic Partition
-BOARD_SUPER_PARTITION_SIZE := 8589934592
+BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 8589934592
-BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := product vendor system
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9126805504
+BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := product vendor system odm
 
 # System as root
 BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist
@@ -140,7 +134,6 @@ TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
 TW_NO_SCREEN_BLANK := true
 PLATFORM_VERSION := 16.1.0
-
-# haptics
+TW_DEVICE_VERSION := 10
 TW_SUPPORT_INPUT_1_2_HAPTICS := true
-#
+TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
