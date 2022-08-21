@@ -13,20 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Release name
 PRODUCT_RELEASE_NAME := gauguin
 DEVICE_PATH := device/xiaomi/gauguin
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-$(call inherit-product, vendor/omni/config/common.mk)
+CUSTOM_VENDOR := $(lastword $(subst /, ,$(firstword $(subst _, ,$(firstword $(MAKEFILE_LIST))))))
+BOARD_VENDOR := $(or $(word 2,$(subst /, ,$(firstword $(MAKEFILE_LIST)))),$(value 2))
+
+$(call inherit-product, $(DEVICE_PATH)/device.mk)
+$(call inherit-product, vendor/$(CUSTOM_VENDOR)/config/common.mk)
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2127-12-31
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := gauguin
-PRODUCT_NAME := omni_gauguin
+PRODUCT_NAME := twrp_gauguin
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi 10T Lite
 PRODUCT_MANUFACTURER := Xiaomi
-
-# HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31
