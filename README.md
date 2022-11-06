@@ -6,4 +6,4 @@ Device tree for Xiaomi
 
     gauguin:      Xiaomi Mi 10T Lite
     
-    gauguin-pro:  Redmi Note 10 5G
+    gauguin-pro:  Redmi Note 9 Pro 5G
